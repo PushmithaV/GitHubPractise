@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="browser" value="firefox"/>
+  <test name="Test">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.tyss.test.Testscript1"/>
+      <class name="com.tyss.test.TestNG2"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test2">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.tyss.test.Testscript1"/>
+      <class name="com.tyss.test.TestNG2"/>
+    </classes>
+  </test> <!-- Test2 -->
+  <test name="Test(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.tyss.test.TestNG2">
+        <methods>
+          <include name="aftermethod"/>
+          <include name="aftermethod"/>
+          <include name="testcase1"/>
+          <include name="testcase1"/>
+        </methods>
+      </class> <!-- com.tyss.test.TestNG2 -->
+      <class name="com.tyss.test.Testscript1">
+        <methods>
+          <include name="aftermethod"/>
+          <include name="aftermethod"/>
+          <include name="testcase1"/>
+        </methods>
+      </class> <!-- com.tyss.test.Testscript1 -->
+    </classes>
+  </test> <!-- Test(failed) -->
+  <test name="Test2(failed)" parallel="tests">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.tyss.test.TestNG2">
+        <methods>
+          <include name="aftermethod"/>
+          <include name="aftermethod"/>
+          <include name="testcase2"/>
+          <include name="testcase1"/>
+          <include name="testcase1"/>
+        </methods>
+      </class> <!-- com.tyss.test.TestNG2 -->
+      <class name="com.tyss.test.Testscript1">
+        <methods>
+          <include name="aftermethod"/>
+          <include name="aftermethod"/>
+          <include name="testcase1"/>
+        </methods>
+      </class> <!-- com.tyss.test.Testscript1 -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+</suite> <!-- Failed suite [Suite] -->
