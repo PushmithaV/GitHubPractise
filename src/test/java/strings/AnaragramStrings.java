@@ -27,6 +27,7 @@ str2=str2.toLowerCase();
 		{
 			System.out.println("Not anagram");
 		}
+		
 	}
 }
 }
